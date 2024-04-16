@@ -1,0 +1,187 @@
+/* Shashank Pandey */
+/* 2408414 */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Merriweather:wght@300&family=Oswald&family=Poppins:wght@300&family=Rubik+Lines&display=swap');
+
+:root {
+  --color: black;
+  --card-bg: rgba(255, 255, 255, .5);
+  --card-shadow: 0 8px 16px rgba(255, 255, 255, 0.25);
+  --card-border: 2px solid rgba(255, 255, 255, .5);
+  --card-radius: 12px;
+  --card-backdrop: blur(33px);
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Merriweather;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-color: burlywood;
+  background-image: url('https://source.unsplash.com/1600x900/?${city}');
+  font-size: 110%;
+}
+
+.card {
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(33px);
+  color: whitesmoke;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
+  transition: border-radius 0.3s, background-color 0.8s;
+}
+
+.card:hover {
+  border-radius: 20px !important;
+  background-color: #a49c94;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 55%;
+  border: none;
+  height: 2.5em;
+  width: 2.4em;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+input.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.4em;
+  border-radius: 2.4em;
+  background: aliceblue;
+  color: dimgray;
+  font-family: inherit;
+  font-size: 100%;
+  width: calc(100% - 100px);
+}
+
+input.search-bar:focus {
+  border-color: #3498db;
+}
+
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+  size: 1;
+}
+
+.description {
+  text-transform: capitalize;
+  margin-left: 1px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-top: 1em;
+  background-color: var(--card-bg);
+  width: calc(100% - 3px);
+  text-align: center;
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--card-backdrop);
+}
+
+footer p {
+  margin: .8em 10em;
+}
+
+.historical-weather {
+  display: flex;
+  border-left: 1px solid #ffffff50;
+  padding-left: 2em;
+  background-color: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(33px);
+  border-radius: 20px;
+  transition: background-color 0.3s; 
+}
+
+.historical-weather:hover {
+  background-color: #a49c94; 
+}
+
+.historical-item {
+  display: flex;
+  text-align: center;
+  gap: 1em;
+  color: whitesmoke;
+  transition: background-color 0.3s; 
+}
+
+.historical-item:hover {
+  background-color: #5d5647; 
+}
+
+.historical-item:nth-child(2) {
+  border-bottom: 2px solid black;
+}
+
+.historical-day {
+  text-align: left;
+  width: 120px;
+}
+
+.historical-item p {
+  text-align: center;
+  margin: 0.7em 0;
+}
+
+.historical-temp {
+  width: 4.5em;
+}
+
+.historical-windspeed {
+  width: 8em;
+}
+
+.historical-humidity {
+  width: 5em;
+}
+
+.historical-pressure {
+  width: 5em;
+}
+
+.error {
+  display: none;
+}
+
+.weather.loading {
+  visibility: hidden;
+}
+
+.weather.loading::after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
